@@ -22,14 +22,15 @@ class LoginController extends Controller
         ]);
         $credentials = $request->only('id', 'password');
 
-        if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt([
+            'id_admin' => $credentials['id'],
+            'password' => $credentials['password']
+        ])) {
             $request->session()->regenerate();
             return redirect()->route('admin/dashboard');
         }
 
-        return back()->withErrors([
-            'error' => 'The provided credentials do not match our records.',
-        ]);
+        return redirect()->route('login')->withErrors(['id' => 'username']);
     }
 
     public function logout(): RedirectResponse

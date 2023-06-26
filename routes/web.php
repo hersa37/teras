@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,9 @@ Route::post('/login', [LoginController::class, 'store']
 Route::get('/logout', [LoginController::class, 'logout']
 )->name('logout');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->name('admin/dashboard');
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']
+    )->name('admin/dashboard');
+});
 
 
