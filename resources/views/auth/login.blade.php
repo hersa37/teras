@@ -37,10 +37,13 @@
             </div>
         </form>
     </div>
+    @error('id')
+    <div class="container">
+        <h1>{{ $message }}</h1>
+    </div>
+    @enderror
 </div>
-@error('error')
-<h1>{{ $id }}</h1>
-@enderror
+
 </body>
 
 </html>

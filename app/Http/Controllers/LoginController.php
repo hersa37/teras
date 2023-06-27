@@ -9,8 +9,11 @@ use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-    public function create(): View
+    public function create()
     {
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin/dashboard');
+        }
         return view('auth.login');
     }
 
@@ -30,13 +33,14 @@ class LoginController extends Controller
             return redirect()->route('admin/dashboard');
         }
 
-        return redirect()->route('login')->withErrors(['id' => 'username']);
+        return redirect()->route('login')->withErrors(['id' => 'Incorrect username or password']);
     }
 
     public function logout(): RedirectResponse
     {
+        $user = Auth::guard('admin')->user();
         Auth::guard('admin')->logout();
-        return redirect()->route('login');
+        return redirect()->route('login', ['logged_out' => $user]);
     }
 
 }

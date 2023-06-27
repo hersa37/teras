@@ -5,16 +5,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @vite(['/resources/css/login-style.css'])
 </head>
 <body>
-
-{{--Logout buton--}}
-<form action="{{ route('logout') }}" method="post">
-    @csrf
-    <div class="input-field">
-        <input type="submit" class="submit" value="Logout">
-    </div>
-</form>
+@foreach($tenants as $tenant)
+    @php
+    echo $tenant->nama_tenant;
+    @endphp
+@endforeach
 </body>
 </html>
