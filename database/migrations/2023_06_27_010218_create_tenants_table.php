@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('id_tenant', 255)->primary();
             $table->string('nama_tenant', 255);
             $table->string('kategori_tenant', 255);
-            $table->foreign('kategori_tenant')->references('nama_kategori')->on('kategori');
+            $table->foreign('kategori_tenant')->references('nama_kategori')->on('kategori')->onDelete('cascade');
             $table->string('password', 255);
             $table->string('no_telp', 255);
         });

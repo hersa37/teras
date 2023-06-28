@@ -1,0 +1,92 @@
+:root {
+  font-size: small;
+  font-family: "Poppins";
+}
+
+header {
+  background-color: white;
+}
+
+body {
+  /* background-color: rgba(53, 113, 70, 1); */
+  background-color: rgba(214, 233, 218, 1);
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.cardForm {
+  width: 1440px;
+  height: 963px;
+  flex-shrink: 0;
+  background-color: rgba(214, 233, 218, 1);
+}
+
+.titleBar {
+  position: relative;
+  margin-top: 5px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background-color: rgba(53, 113, 70, 1);
+}
+
+.titleBar .subtitle {
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #d6e9da;
+  font-size: 24px;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.input-field .input {
+  color: #d6e9da;
+  width: 664px;
+  height: 35.9px;
+  left: px;
+  top: 0px;
+  background: rgba(49, 105, 65, 0.34);
+  border-radius: 10px;
+  margin-left: 320px;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(214, 233, 218, 1);
+}
+
+.buttonSimpan {
+  background-color: rgba(53, 113, 70, 1);
+  color: #d6e9da;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 450px;
+  margin-top: 270px;
+}
+
+.buttonBatal {
+  background-color: rgba(49, 105, 65, 0.34);
+  color: #d6e9da;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 270px;
+}
+
+.button:hover {
+  background-color: rgba(38, 82, 50, 1);
+}

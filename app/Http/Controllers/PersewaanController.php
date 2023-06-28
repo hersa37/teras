@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\Persewaan;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class PersewaanController extends Controller
 {
-    public function dashboard() {
-        $tenantView = new TenantController();
-        return $tenantView->index();
-    }
     /**
      * Display a listing of the resource.
      */
@@ -38,7 +34,7 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Admin $admin)
+    public function show(Persewaan $persewaan)
     {
         //
     }
@@ -46,7 +42,7 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
+    public function edit(Persewaan $persewaan)
     {
         //
     }
@@ -54,7 +50,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Persewaan $persewaan)
     {
         //
     }
@@ -62,7 +58,7 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Admin $admin)
+    public function destroy(Persewaan $persewaan)
     {
         //
     }

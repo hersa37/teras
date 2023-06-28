@@ -13,11 +13,12 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
+//        Create laravel seeder using admin class
         Admin::create([
-            'id_admin' => 'admin',
-            'password' => bcrypt('admin'),
+            'id_admin' => 'hersa',
             'nama' => 'Admin',
-            'no_telp' => '081234567890'
+            'password' => bcrypt('admin'),
+            'no_telp' => '081234567890',
         ]);
     }
 }

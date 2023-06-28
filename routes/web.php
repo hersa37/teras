@@ -22,7 +22,7 @@ Route::get('/login', [LoginController::class, 'create']
 )->name('login');
 Route::post('/login', [LoginController::class, 'store']
 );
-Route::post('/logout', [LoginController::class, 'logout']
+Route::get('/logout', [LoginController::class, 'logout']
 )->name('logout');
 
 Route::get('/', function () {
@@ -34,8 +34,10 @@ Route::middleware(['auth:admin'])->group(function () {
     )->name('admin/dashboard');
     Route::get('/admin', [AdminController::class, 'dashboard']
     )->name('admin');
-    Route::resource('tenant-manager', TenantController::class
-    )->only(['index', 'create', 'store']);
+    Route::resource('tenant-management', TenantController::class
+    )->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    Route::redirect('/admin', '/tenant-management');
+
 //    Route::post('admin/tenant/store', [TenantController::class,'store']
 //    )->name('tenant/store');
 //    Route::get('admin/tenant/store', [TenantController::class,'create']
