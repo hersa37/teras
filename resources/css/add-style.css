@@ -74,7 +74,6 @@ table {
     margin-top: 10px;
 }
 
-
 td {
     font-weight: 600;
     font-size: 1rem;
@@ -95,6 +94,12 @@ td {
 ::-webkit-input-placeholder {
     color: rgba(214, 233, 218, 1);
 }
+
+.select_kategori {
+  position: relative;
+}
+
+
 
 /* button */
 .button-container {

@@ -33,13 +33,13 @@
                         </td>
                         <td><label>:</label></td>
                         <td>
-                            <div class="input-field">
-                                <input
-                                    type="text"
-                                    class="input"
-                                    placeholder="silakan isi dengan sesuai..."
-                                    name="kategori"
-                                />
+                            <div class="select_kategori" style="width: 100%;">
+                            <select name="kategori" id="kategori">
+                                <option value="Makanan">Makanan</option>
+                                <option value="Oleh-Oleh">Oleh-oleh</option>
+                                <option value="Pernak-pernik">Pernak-pernik</option>
+                                <option value="Batik">batik</option>
+                            </select>
                             </div>
                         </td>
                     </tr>
