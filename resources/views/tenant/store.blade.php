@@ -4,12 +4,6 @@
 @endpush
 @section('title', 'Add Tenant')
 @section('content')
-    <div class="container_content">
-      <div class="title_content">
-        <div class="title">
-            <label for="tenantName">Tenant 1</label>
-        </div>
-    </div>
     <div class="container">
         <div class="titleBar">
             <div class="subtitle text-center">Data Tenant</div>
@@ -18,7 +12,7 @@
             <form action="" method="post">
                 <table cellspacing="10px" class="form_tenant">
                     <tr>
-                        <td style="padding-left: 10px;"> 
+                        <td style="padding-left: 10px;">
                             <label>Nama Pemilik</label>
                         </td>
                         <td ><label>:</label></td>
@@ -28,13 +22,13 @@
                                     type="text"
                                     class="input"
                                     placeholder="silakan isi dengan sesuai..."
-                                    name="namaPemilik"
+                                    name="nama_tenant"
                                 />
                             </div>
                         </td>
                     </tr>
                     <tr>
-                    <td style="padding-left: 10px;"> 
+                    <td style="padding-left: 10px;">
                         <label>Kategori</label>
                         </td>
                         <td><label>:</label></td>
@@ -50,7 +44,7 @@
                         </td>
                     </tr>
                     <tr>
-                    <td style="padding-left: 10px;"> 
+                    <td style="padding-left: 10px;">
                         <label>Nomor Telepon</label>
                         </td>
                         <td><label>:</label></td>

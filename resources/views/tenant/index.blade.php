@@ -20,7 +20,7 @@
                 <tr class="item_tenant">
                     <div class="item_list" style="display: flex">
                         <td class="label">
-                            <label for="tenant" class="label_tenant"> {{ $tenant->nama_tenant }}</label>
+                            <label for="tenant" class="label_tenant"> {{ $tenant->id_tenant . ' | ' . $tenant->nama_tenant }}</label>
                         </td>
                         <div class="btn">
                             <td>

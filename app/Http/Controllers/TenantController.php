@@ -52,7 +52,10 @@ class TenantController extends Controller
      */
     public function show(string $id_tenant)
     {
-        $tenant = Tenant::find($id_tenant);
+        $tenant = Tenant::findOrFail($id_tenant);
+        if ($tenant == null) {
+            $tenant = Tenant::where('nama_tenant', $id_tenant)->firstOrFail();
+        }
         return view('tenant.show', compact('tenant'));
     }
 
