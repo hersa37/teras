@@ -27,5 +27,12 @@ class TenantSeeder extends Seeder
             'password' => bcrypt('tenant'),
             'no_telp' => '081234567890',
         ]);
+
+        Tenant::create([
+            'nama_tenant' => 'Tenant3',
+            'kategori_tenant' => 'Minuman',
+            'password' => bcrypt('tenant'),
+            'no_telp' => '081234567890',
+        ]);
     }
 }

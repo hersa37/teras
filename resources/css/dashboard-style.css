@@ -11,6 +11,7 @@ body {
     padding: 0;
 }
 
+/* sidebar */
 .sidebar {
     position: absolute;
     top: 0;
@@ -61,7 +62,7 @@ body {
 }
 
 .logo_name {
-    font-size: Medium;
+    font-size: 600;
     width: max-content;
     color: rgba(234, 247, 234, 1);
 }
@@ -133,15 +134,17 @@ body {
     opacity: 1;
 }
 
+/* set tooltip */
 .sidebar ul li .tooltip {
     position: absolute;
-    color: rgba(53, 113, 70, 1);
+    color: rgba(234, 247, 234, 1);
     font-weight: 600;
     left: 125px;
     top: 50%;
     width: max-content;
     transform: translate(-50%, -50%);
     box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    background-color: rgba(98, 154, 112, 1);
     border-radius: .6rem;
     padding: .4rem 1.2rem;
     line-height: 1.8rem;
@@ -169,6 +172,7 @@ body {
 
 }
 
+/* profile bottom */
 .sidebar .profile_content {
     position: absolute;
     color: rgba(234, 247, 234, 1);

@@ -15,13 +15,14 @@
         </div>
 
         <div class="tenant_list">
-            <table class="table_content">
+            <table class="table_content" cellspacing="10px">
                 @foreach($tenants as $tenant)
+                <tr class="item_tenant">
                     <div class="item_list" style="display: flex">
-                        <tr class="item_tenant">
-                            <td>
-                                <label for="tenant" class="label_tenant"> {{ $tenant->nama_tenant }}</label>
-                            </td>
+                        <td class="label">
+                            <label for="tenant" class="label_tenant"> {{ $tenant->nama_tenant }}</label>
+                        </td>
+                        <div class="btn">
                             <td>
                                 <form action="{{ route('tenant-management.edit', $tenant->id_tenant) }}" method="post">
                                     <input
@@ -44,8 +45,9 @@
                                     />
                                 </form>
                             </td>
-                        </tr>
+                        </div>
                     </div>
+                </tr>
                 @endforeach
             </table>
         </div>

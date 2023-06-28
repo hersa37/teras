@@ -2,13 +2,14 @@
 .container {
     align-items: center;
 }
+
 /* search bar */
 .search {
     background-color: rgba(98, 154, 112, 1);
     min-width: 100vh;
     max-height: 50px;
     border-radius: 60px;
-    display: felx;
+    display: flex;
 }
 
 .search .input {
@@ -69,19 +70,14 @@
     bottom: 20px;
 }
 
-/*
-.item_tenant{
-    background-color: rgba(53, 113, 70, 1);
-} */
-
 .btn_editTenant {
     background-color: rgb(79, 154, 177);
-    /*margin-left: 10px;*/
-    color: white;
+    margin-left: 10px;
+    color: rgba(234, 247, 234, 1);
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    padding: 8px 25px;
+    padding: 12px 30px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -89,11 +85,11 @@
 .btn_deleteTenant {
     background-color: rgba(255, 71, 71, 1);
     margin-left: 10px;
-    color: white;
+    color: rgba(234, 247, 234, 1);
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    padding: 8px 25px;
+    padding: 12px 40px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -106,7 +102,14 @@
     margin-right: 40px;
     min-width: 100vh;
     display: flex;
+    padding: 10px 10px 10px 10px;
 }
+
+.item_tenant .label {
+    background-color: rgba(98, 154, 112, 1);
+    border-radius: 10px;
+}
+
 
 .label_tenant {
     position: relative;
@@ -118,6 +121,6 @@
     justify-content: left;
     align-items: center;
     color: rgba(234, 247, 234, 1);
-    font-size:large;
+    font-size: large;
     font-weight: 500;
 }
