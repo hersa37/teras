@@ -72,7 +72,9 @@
 
 .btn_editTenant {
     background-color: rgb(79, 154, 177);
+    width: 100%;
     margin-left: 10px;
+    margin-right: 10px;
     color: rgba(234, 247, 234, 1);
     border: none;
     border-radius: 6px;
@@ -84,7 +86,9 @@
 
 .btn_deleteTenant {
     background-color: rgba(255, 71, 71, 1);
+    width: 100%;
     margin-left: 10px;
+    margin-right: 20px;
     color: rgba(234, 247, 234, 1);
     border: none;
     border-radius: 6px;
@@ -102,7 +106,7 @@
     margin-right: 40px;
     min-width: 100vh;
     display: flex;
-    padding: 10px 10px 10px 10px;
+    padding: 20px 20px 20px 10px;
 }
 
 .item_tenant .label {
@@ -110,7 +114,9 @@
     border-radius: 10px;
 }
 
-
+table{
+    width: 100%;
+}
 .label_tenant {
     position: relative;
     min-width: 80vh;
