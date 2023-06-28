@@ -67,7 +67,7 @@
                     </tr>
                 </table>
                 <div class="button-container">
-                    <button type="submit" class="buttonSimpan">Simpan</button>
+                    <button type="submit" class="buttonSimpan">Tambah</button>
                     <a href="{{ route('tenant-management.index') }}">
                         <button type="button" class="buttonBatal">Batal</button>
                     </a>
