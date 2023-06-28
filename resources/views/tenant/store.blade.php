@@ -4,16 +4,24 @@
 @endpush
 @section('title', 'Add Tenant')
 @section('content')
+    <div class="container_content">
+      <div class="title_content">
+        <div class="title">
+            <label for="tenantName">Tenant 1</label>
+        </div>
+    </div>
     <div class="container">
         <div class="titleBar">
             <div class="subtitle text-center">Data Tenant</div>
         </div>
         <div class="container-fluid mx-5">
             <form action="" method="post">
-                <table>
+                <table cellspacing="10px" class="form_tenant">
                     <tr>
-                        <td>Nama Pemilik</td>
-                        <td>:</td>
+                        <td style="padding-left: 10px;"> 
+                            <label>Nama Pemilik</label>
+                        </td>
+                        <td ><label>:</label></td>
                         <td>
                             <div class="input-field">
                                 <input
@@ -26,8 +34,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Kategori</td>
-                        <td>:</td>
+                    <td style="padding-left: 10px;"> 
+                        <label>Kategori</label>
+                        </td>
+                        <td><label>:</label></td>
                         <td>
                             <div class="input-field">
                                 <input
@@ -40,8 +50,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Nomor Telepon</td>
-                        <td>:</td>
+                    <td style="padding-left: 10px;"> 
+                        <label>Nomor Telepon</label>
+                        </td>
+                        <td><label>:</label></td>
                         <td>
                             <div class="input-field">
                                 <input
