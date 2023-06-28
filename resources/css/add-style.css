@@ -85,7 +85,6 @@ td {
     width: 100vh;
     background: rgba(49, 105, 65, 0.34);
     border-radius: 10px;
-    margin-left: 320px;
     padding: 10px 10px 10px 10px;
     border: none;
     font-size: 1rem;
@@ -97,6 +96,22 @@ td {
 
 .select_kategori {
   position: relative;
+}
+
+/* option */
+.select_kategori {
+  width: 200px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 10px 10px;
+  border: none;
+  border-radius: 10px;
+  border-radius: 4px;
+  background-color: rgba(53, 113, 70, 1);
+  font-size: 1rem;
+  color: rgba(214, 233, 218, 1);
 }
 
 
