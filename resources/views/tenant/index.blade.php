@@ -59,7 +59,7 @@
                 {{ $tenants->links('vendor.pagination.default') }}
             </div>
         </div>
-        <div class="search" style="display: flex">
+        <div class="btn_add">
             <a href="{{ route('tenant.create') }}">
                 <button class="add_tenant">Tambah Tenant</button>
             </a>
