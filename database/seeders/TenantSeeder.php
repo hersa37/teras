@@ -13,28 +13,7 @@ class TenantSeeder extends Seeder
      */
     public function run(): void
     {
-        // create 10 tenants using the tenant factory
-        Tenant::factory()->count(40)->create();
-        // seeder for Tenant
-//        Tenant::create([
-//            'nama_tenant' => 'Tenant1',
-//            'kategori_tenant' => 'Makanan',
-//            'password' => bcrypt('tenant'),
-//            'no_telp' => '081234567890',
-//        ]);
-//
-//        Tenant::create([
-//            'nama_tenant' => 'Tenant2',
-//            'kategori_tenant' => 'Minuman',
-//            'password' => bcrypt('tenant'),
-//            'no_telp' => '081234567890',
-//        ]);
-//
-//        Tenant::create([
-//            'nama_tenant' => 'Tenant3',
-//            'kategori_tenant' => 'Minuman',
-//            'password' => bcrypt('tenant'),
-//            'no_telp' => '081234567890',
-//        ]);
+//        Buat 100 record tenant menggunakan factory
+        Tenant::factory()->count(100)->create();
     }
 }

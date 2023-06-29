@@ -17,38 +17,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+// Route yang digunakan untuk mendapatkan halaman login
 Route::get('/login', [LoginController::class, 'create']
 )->name('login');
+// Route yang digunakan untuk memroses login
 Route::post('/login', [LoginController::class, 'store']
 );
+// Route yang digunakan untuk logout
 Route::get('/logout', [LoginController::class, 'logout']
 )->name('logout');
 
+// Root route yang akan mengarahkan ke halaman login
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
+/**
+ * Daftar route yang dibatasi oleh middleware auth:admin.
+ * Hanya user yang sudah login dengan guard admin yang dapat mengakses route ini.
+ */
 Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']
-    )->name('admin/dashboard');
-    Route::get('/admin', [AdminController::class, 'dashboard']
-    )->name('admin');
+    // Sekumpulan route untuk model tenant yang menggunakan TenantController
     Route::resource('tenant', TenantController::class
     )->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    // Route yang digunakan untuk menampilkan tenant spesifik
     Route::get('show', [TenantController::class, 'show']
     )->name('tenant/show');
+    // Route untuk mencari tenant
     Route::get('search', [TenantController::class, 'search']
     )->name('tenant/search');
-    Route::redirect('/admin', '/tenant-management');
-
-
-//    Route::post('admin/tenant/store', [TenantController::class,'store']
-//    )->name('tenant/store');
-//    Route::get('admin/tenant/store', [TenantController::class,'create']
-//    )->name('tenant/create');
-//    Route::get('admin/tenant/index', [TenantController::class,'index']
-//    )->name('tenant/index');
 
 });
 

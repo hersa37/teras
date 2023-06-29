@@ -13,6 +13,7 @@
     @stack('styles')
     @vite(['resources/css/login-style.css'])
     <style>
+{{--        fade in when loaded--}}
         body {
             animation: fadeInAnimation ease 2s;
             animation-iteration-count: 1;
@@ -35,13 +36,15 @@
     <div class="container">
         <form action="{{ route('login') }}" method="post">
             @csrf
+{{--            Logo--}}
             <div class="top-header">
                 <header>
                     <img class="Logo1" style="width: 308px; height: 154px" src="{{ asset('icons/Logo.png') }}"/>
                 </header>
             </div>
+{{--            Credentials--}}
             <div class="input-field">
-                <input name='id' type="text" class="input" placeholder="Username" required/>
+                <input name='id' type="text" class="input" placeholder="ID" required/>
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-field">
@@ -52,6 +55,7 @@
             <div class="input-field">
                 <input type="submit" class="submit" value="Login"/>
             </div>
+{{--            Shows error if there is any--}}
             @error('id')
             <div class="error_login">
                 <p>{{ $message }}</p>

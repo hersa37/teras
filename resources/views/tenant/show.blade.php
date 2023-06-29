@@ -1,15 +1,17 @@
-@extends('layouts.admin-dashboard')
+@extends('layouts.admin')
 @push('styles')
-    @vite(['resources/css/add-style.css'])
+    @vite(['resources/css/tenant-create-style.css'])
 @endpush
 @section('title', 'Edit Tenant')
 @section('content')
     <div class="container_content">
+        {{--        Shows tenant ID as a title--}}
         <div class="title_content">
             <div class="title">
                 <label for="id_tenant">{{$tenant->id_tenant}}</label>
             </div>
         </div>
+        {{--        Shows table of tenant data--}}
         <div class="container">
             <div class="titleBar">
                 <div class="subtitle text-center">Data Tenant</div>
@@ -46,6 +48,7 @@
                         </td>
                     </tr>
                 </table>
+                {{--                TODO: Clean up the kembali button--}}
                 <div class="button-container">
                     <a href="{{ route('tenant.edit', $tenant) }}">
                         <button type="submit" class="buttonSimpan">Edit</button>

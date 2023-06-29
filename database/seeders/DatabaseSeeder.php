@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Panggil seeder yang akan digunakan
         $this->call([
             AdminSeeder::class,
             KategoriSeeder::class,

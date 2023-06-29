@@ -13,7 +13,7 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        //        Create laravel seeder using admin class
+        // Buat record admin
         Admin::create([
             'id_admin' => 'hersa',
             'nama' => 'Admin',

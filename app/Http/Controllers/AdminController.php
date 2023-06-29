@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function dashboard() {
-        $tenantView = new TenantController();
-        return $tenantView->index();
-    }
     /**
      * Display a listing of the resource.
      */

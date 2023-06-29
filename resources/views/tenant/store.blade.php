@@ -1,6 +1,6 @@
-@extends('layouts.admin-dashboard')
+@extends('layouts.admin')
 @push('styles')
-    @vite(['resources/css/add-style.css'])
+    @vite(['resources/css/tenant-create-style.css'])
 @endpush
 @section('title', 'Add Tenant')
 @section('content')
@@ -11,12 +11,13 @@
         <div class="container-fluid mx-5">
             <form action="{{ route('tenant.store') }}" method="post">
                 @csrf
+{{--                Form of inputs--}}
                 <table cellspacing="10px" class="form_tenant">
                     <tr>
                         <td style="padding-left: 10px;">
                             <label>Nama Pemilik</label>
                         </td>
-                        <td ><label>:</label></td>
+                        <td><label>:</label></td>
                         <td>
                             <div class="input-field">
                                 <input
@@ -29,23 +30,24 @@
                         </td>
                     </tr>
                     <tr>
-                    <td style="padding-left: 10px;">
-                        <label>Kategori</label>
+                        <td style="padding-left: 10px;">
+                            <label>Kategori</label>
                         </td>
                         <td><label>:</label></td>
                         <td>
+{{--                            Dropdown menu consisting of categories--}}
                             <div class="select_kategori" style="width: 100%;">
-                            <select name="kategori_tenant" id="kategori">
-                                @foreach($kategori as $k)
-                                <option value="{{ $k->nama_kategori }}">{{ $k->nama_kategori }}</option>
-                                @endforeach
-                            </select>
+                                <select name="kategori_tenant" id="kategori">
+                                    @foreach($kategori as $k)
+                                        <option value="{{ $k->nama_kategori }}">{{ $k->nama_kategori }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                    <td style="padding-left: 10px;">
-                        <label>Nomor Telepon</label>
+                        <td style="padding-left: 10px;">
+                            <label>Nomor Telepon</label>
                         </td>
                         <td><label>:</label></td>
                         <td>

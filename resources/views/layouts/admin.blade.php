@@ -1,8 +1,10 @@
+{{--Sidebar and general layout of admin--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{{--    @yield('title') allows components to push title values--}}
     <title>Teras Malioboro | @yield('title')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -14,11 +16,12 @@
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet"
     />
-    @vite(['resources/css/dashboard-style.css', 'resources/css/app.css'])
+    @vite(['resources/css/sidebar-style.css', 'resources/css/app.css'])
+{{--    Allows components to push their own css--}}
     @stack('styles')
 </head>
 <body>
-<div class="sidebar" style="">
+<div class="sidebar">
     <div class="logo_content">
         <div class="logo">
             <i><img src="{{ asset('icons/Logo.png') }}" class="logo_img"/></i>
@@ -26,6 +29,7 @@
         </div>
         <i class="bx bx-menu" id="btn"></i>
     </div>
+{{--    Menu list--}}
     <div>
         <ul>
             <li>
@@ -79,7 +83,7 @@
         </div>
     </div>
 </div>
-
+{{--Main component put into @yield('content')--}}
 <div class="main-content">
     <div class="container-fluid">
         @yield('content')

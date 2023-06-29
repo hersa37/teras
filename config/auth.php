@@ -34,7 +34,7 @@ return [
     | Supported: "session"
     |
     */
-
+// Berfungsi untuk mengatur jenis user yang dapat diotentikasi
     'guards' => [
         'web' => [
             'driver' => 'session',
@@ -69,7 +69,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+// Tabel yang digunakan untuk otentikasi admin
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
