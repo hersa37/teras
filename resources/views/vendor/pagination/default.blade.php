@@ -1,61 +1,46 @@
 @if ($paginator->hasPages())
-     <av class="nav_pagination" > 
+    <nav>
         <ul class="pagination">
             {{-- Previous Page Link --}}
-            @i ($paginator->onFirstPage())
+            @if ($paginator->onFirstPage())
                 <li class="disabled pages" aria-disabled="true" aria-label="@lang('pagination.previous') ">
                     <span aria-hidden="true">&lsaquo;</span>
-               </li>
+                </li>
             @else
                 <li class="pages">
-                   <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
+                    <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
                 </li>
             @endif
- 
+
             {{-- Pagination Elements --}}
             @foreach ($elements as $element)
-                {{-- "Three Dot" Separator --}}
+                {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
                     <li class="disabled pages" aria-disabled="true"><span>{{ $element }}</span></li>
-                 @endif
-    
-
+                @endif
 
                 {{-- Array Of Links --}}
-                 @if (is_array
-    (
-$element))
+                @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <li cl
-ass="active pages" aria-current="page"><span>{{ $page }}</span></li>
+                            <li class="active pages" aria-current="page"><span>{{ $page }}</span></li>
                         @else
                             <li class="pages"><a href="{{ $url }}">{{ $page }}</a></li>
                         @endif
-
                     @endforeach
                 @endif
-             @endforeach
-    
-
+            @endforeach
 
             {{-- Next Page Link --}}
-             @if ($pagin
-    a
-tor->hasMorePages())
+            @if ($paginator->hasMorePages())
                 <li class="pages">
                     <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
-                 </li>
-    
-             @else
-                           <span aria-hid
-    e
-n="true">&rsaquo;</span>
+                </li>
+            @else
+                <li class="disabled pages" aria-disabled="true" aria-label="@lang('pagination.next')">
+                    <span aria-hidden="true">&rsaquo;</span>
                 </li>
             @endif
-         </ul>
-    
-
+        </ul>
     </nav>
-    @endif
-    
+@endif
