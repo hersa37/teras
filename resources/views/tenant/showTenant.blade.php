@@ -27,7 +27,7 @@
                             <td><label>:</label></td>
                             <td>
                                 <div class="input-field">
-                                    <input
+                                    <label
                                         type="text"
                                         class="input"
                                         placeholder={{$tenant->nama_tenant}}
@@ -43,16 +43,14 @@
                             </td>
                             <td><label>:</label></td>
                             <td>
-                                <div class="select_kategori" style="width: 100%;">
-                                    <select name="kategori_tenant" id="kategori">
-                                        <option value="{{ $tenant->kategori_tenant }}">{{ $tenant->kategori_tenant }}</option>
-                                        @foreach($kategori as $k)
-                                            @if($k == $tenant->kategori_tenant)
-                                                @continue
-                                            @endif
-                                            <option value="{{ $k }}">{{ $k }}</option>
-                                        @endforeach
-                                    </select>
+                                <div class="input-field">
+                                    <label
+                                        type="text"
+                                        class="input"
+                                        placeholder={{$tenant->nama_tenant}}
+                                    name="nama_tenant"
+                                        value="{{ old('nama_tenant', $tenant->nama_tenant) }}"
+                                    />
                                 </div>
                             </td>
                         </tr>
@@ -63,7 +61,7 @@
                             <td><label>:</label></td>
                             <td>
                                 <div class="input-field">
-                                    <input
+                                    <label
                                         type="text"
                                         class="input"
                                         placeholder={{$tenant->no_telp}}
