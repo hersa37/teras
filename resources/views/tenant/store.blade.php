@@ -72,3 +72,6 @@
         </div>
     </div>
 @endsection
+<!-- document.getElementById("kategori").addEventListener("change", function() {
+    this.style.backgroundColor = this.options[this.selectedIndex].style.backgroundColor;
+}); -->

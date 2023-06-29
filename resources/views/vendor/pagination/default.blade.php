@@ -1,11 +1,20 @@
 @if ($paginator->hasPages())
     <div style="text-align: center; padding-top: 10px">
-        <div>
+        <div class="content_count" 
+        style=" color: white;
+                font-weight: 600;
+                background-color: rgba(133, 178, 144, 1);
+                width: max-content;
+                border-radius: 6px;
+                padding: 10px 10px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%)">
             <p>{{ $paginator->perPage() * $paginator->currentPage() - $paginator->perPage() + 1 }}
                 -
                 {{ $paginator->perPage() * $paginator->currentPage() - $paginator->perPage() + $paginator->count() }}
             </p>
-            <p>Total: {{ $paginator->total() }}</p>
+            <p>Total : {{ $paginator->total() }}</p>
         </div>
     </div>
     <div>
