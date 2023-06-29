@@ -57,10 +57,10 @@
                 {{--                TODO: Clean up the kembali button--}}
                 <div class="button-container">
                     <a href="{{ route('tenant.edit', $tenant) }}">
-                        <button type="submit" class="buttonSimpan">Edit</button>
+                        <button type="button" class="buttonEdit">Edit</button>
                     </a>
                     <a href="{{ route('tenant.index') }}">
-                        <button type="button" class="buttonBatal">Kembali</button>
+                        <button type="button" class="buttonKembali">Kembali</button>
                     </a>
                 </div>
             </div>
