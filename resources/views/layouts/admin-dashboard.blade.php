@@ -28,7 +28,7 @@
     </div>
     <ul>
         <li>
-            <a href="{{ route('tenant-management.index') }}">
+            <a href="{{ route('tenant.index') }}">
                 <i class="bx bx-home-alt-2"></i>
                 <span class="nav-item">Tenant</span>
             </a>

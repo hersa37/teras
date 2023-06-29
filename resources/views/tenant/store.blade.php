@@ -9,7 +9,8 @@
             <div class="subtitle text-center">Data Tenant</div>
         </div>
         <div class="container-fluid mx-5">
-            <form action="" method="post">
+            <form action="{{ route('tenant.store') }}" method="post">
+                @csrf
                 <table cellspacing="10px" class="form_tenant">
                     <tr>
                         <td style="padding-left: 10px;">
@@ -34,11 +35,10 @@
                         <td><label>:</label></td>
                         <td>
                             <div class="select_kategori" style="width: 100%;">
-                            <select name="kategori" id="kategori">
-                                <option value="Makanan">Makanan</option>
-                                <option value="Oleh-Oleh">Oleh-oleh</option>
-                                <option value="Pernak-pernik">Pernak-pernik</option>
-                                <option value="Batik">batik</option>
+                            <select name="kategori_tenant" id="kategori">
+                                @foreach($kategori as $k)
+                                <option value="{{ $k->nama_kategori }}">{{ $k->nama_kategori }}</option>
+                                @endforeach
                             </select>
                             </div>
                         </td>
@@ -54,7 +54,7 @@
                                     type="text"
                                     class="input"
                                     placeholder="silakan isi dengan sesuai..."
-                                    name="nomorTelepon"
+                                    name="no_telp"
                                 />
                             </div>
                         </td>
@@ -62,7 +62,7 @@
                 </table>
                 <div class="button-container">
                     <button type="submit" class="buttonSimpan">Tambah</button>
-                    <a href="{{ route('tenant-management.index') }}">
+                    <a href="{{ route('tenant.index') }}">
                         <button type="button" class="buttonBatal">Batal</button>
                     </a>
                 </div>

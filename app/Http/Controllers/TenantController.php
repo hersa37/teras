@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Tenant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,8 @@ class TenantController extends Controller
      */
     public function create()
     {
-        return view('tenant.store');
+        $kategori = Kategori::all();
+        return view('tenant.store', compact('kategori'));
     }
 
     /**
@@ -33,7 +35,7 @@ class TenantController extends Controller
         $request->validate([
             'nama_tenant' => 'required',
             'kategori_tenant' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
             'no_telp' => 'required',
         ]);
 
@@ -44,17 +46,21 @@ class TenantController extends Controller
         $tenant->no_telp = $request->no_telp;
         $tenant->save();
 
-        return redirect()->route('tenant-management.index');
+        return redirect()->route('tenant.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id_tenant)
+    public function show(Request $request)
     {
+        $id_tenant = $request->id_tenant;
         $tenant = Tenant::findOrFail($id_tenant);
         if ($tenant == null) {
             $tenant = Tenant::where('nama_tenant', $id_tenant)->firstOrFail();
+        }
+        if ($tenant == null) {
+            return view('auth.error');
         }
         return view('tenant.show', compact('tenant'));
     }
@@ -65,29 +71,30 @@ class TenantController extends Controller
     public function edit(string $id_tenant)
     {
         $tenant = Tenant::find($id_tenant);
-        return view('tenant.edit', compact('tenant'));
+        $kategori = Kategori::all()
+            ->filter(function (string $value, string $key) use ($tenant) {
+                return $value != $tenant->kategori_tenant;
+            })
+            ->pluck('nama_kategori', 'nama_kategori');
+        return view('tenant.update', compact('tenant', 'kategori'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, Tenant $tenant)
     {
-        $request->validate(
-            ['id_tenant' => 'required'],
-            ['nama_tenant' => 'required'],
-            ['kategori_tenant' => 'required'],
+        $validated = $request->validate([
+            'id_tenant' => 'required',
+            'nama_tenant' => 'required',
+            'kategori_tenant' => 'required',
 //            ['password' => 'required'],
-            ['no_telp' => 'required'],
-        );
+            'no_telp' => 'required',
+        ]);
 
-        $tenant = Tenant::find($request->id_tenant);
-        $tenant->nama_tenant = $request->nama_tenant;
-        $tenant->kategori_tenant = $request->kategori_tenant;
-        $tenant->no_telp = $request->no_telp;
-        $tenant->save();
+        $tenant->update($validated);
 
-        return redirect()->route('tenant-management.index');
+        return redirect()->route('tenant.index');
     }
 
     /**
@@ -111,7 +118,7 @@ class TenantController extends Controller
         $tenant->password = Hash::make($request->password);
         $tenant->save();
 
-        return redirect()->route('tenant-management.index');
+        return redirect()->route('tenant.index');
     }
 
     /**
@@ -121,6 +128,6 @@ class TenantController extends Controller
     {
         $tenant = Tenant::findOrFail($id_tenant);
         $tenant->delete();
-        return redirect()->route('tenant-management.index');
+        return redirect()->route('tenant.index');
     }
 }

@@ -34,9 +34,12 @@ Route::middleware(['auth:admin'])->group(function () {
     )->name('admin/dashboard');
     Route::get('/admin', [AdminController::class, 'dashboard']
     )->name('admin');
-    Route::resource('tenant-management', TenantController::class
+    Route::resource('tenant', TenantController::class
     )->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    Route::get('show', [TenantController::class, 'show']
+    )->name('tenant/show');
     Route::redirect('/admin', '/tenant-management');
+
 
 //    Route::post('admin/tenant/store', [TenantController::class,'store']
 //    )->name('tenant/store');
