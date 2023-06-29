@@ -21,6 +21,7 @@ body {
     background-color: rgba(53, 113, 70, 1);
     padding: 0.4rem 0.8rem;
     transition: all 0.5s ease;
+
 }
 
 .sidebar.active~.main-content {
@@ -108,7 +109,6 @@ body {
     background-color: rgba(234, 247, 234, 1);
     color: rgba(53, 113, 70, 1);
     font-weight: 600;
-
 }
 
 .sidebar .active ul li a{
