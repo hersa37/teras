@@ -1,0 +1,39 @@
+Struktur laravel app yang penting
+
+root
+-app
+--Http
+---Controllers 
+----> LoginController.php		
+----> TenantController.php		# Resource controller
+--Models
+---> Admin.php
+---> Tenant.php
+-config
+--> auth.php 		# File konfigurasi untuk authentication login. 
+-database
+--factories 		# File untuk generate data random untuk model
+--migrations 		# Konfigurasi untuk buat table
+--seeders 			# File untuk memasukkan data ke dalam database
+--> database.sqlite # File database
+-public
+--> icons # Daftar icon yang digunakan
+-resources
+--css
+---> login-style.css
+---> sidebar-style.css
+---> tenant-create-style.css
+---> tenant-index-style.css
+--views
+---auth
+----> login.blade.php		# Halaman login
+---tenant
+----> index.blade.php		# Halaman tampilan daftar tenant
+----> show.blade.php		# Tampilan tenant spesifik
+----> store.blade.php		# Form untuk menambah tenant
+----> update.blade.php		# Form untuk edit tenant
+---vendor
+----pagination
+-----> default.blade.php	# View untuk pagination (data banyak dipotong-potong)
+-routes
+--> web.php		# Daftar route
