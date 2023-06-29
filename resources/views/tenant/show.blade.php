@@ -25,7 +25,9 @@
                         </td>
                         <td><label>:</label></td>
                         <td>
-                            <label>{{ $tenant->nama_tenant }}</label>
+                        <div class="output-field">
+                            <p class="output">{{ $tenant->nama_tenant }}</p>
+                            </div>
                         </td>
 
                     </tr>
@@ -35,7 +37,9 @@
                         </td>
                         <td><label>:</label></td>
                         <td>
-                            <label>{{ $tenant->kategori_tenant }}</label>
+                        <div class="output-field">
+                            <p class="output">{{ $tenant->kategori_tenant }}</p>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +48,9 @@
                         </td>
                         <td><label>:</label></td>
                         <td>
-                            <label>{{ $tenant->no_telp }}</label>
+                        <div class="output-field">
+                            <p class="output">{{ $tenant->no_telp }}</p>
+                            </div>
                         </td>
                     </tr>
                 </table>
