@@ -90,6 +90,18 @@ td {
     font-size: 1rem;
 }
 
+/* output field */
+
+.output-field .output {
+    color: rgba(38, 82, 50, 1);
+    width: 100vh;
+    background: rgba(49, 105, 65, 0.34);
+    border-radius: 10px;
+    padding: 10px 100px 10px 10px;
+    border: none;
+    font-size: 1rem;
+}
+
 ::-webkit-input-placeholder {
     color: rgba(214, 233, 218, 1);
 }
@@ -113,7 +125,6 @@ select {
     font-size: 1rem;
     color: rgba(214, 233, 218, 1);
 }
-
 
 
 /* button */
@@ -151,6 +162,25 @@ select {
     border-radius: 6px;
 }
 
+.buttonKembali{
+    background-color: rgba(53, 113, 70, 1);
+    color: #d6e9da;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+}
+.buttonEdit{
+    background-color: rgb(79, 154, 177);
+    color: rgba(214, 233, 218, 1);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 50px;
+    min-width: 40px;
+    border: none;
+    border-radius: 6px;
+}
 .button:hover {
     background-color: rgba(38, 82, 50, 1);
 }

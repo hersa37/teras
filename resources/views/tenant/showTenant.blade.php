@@ -26,14 +26,10 @@
                             </td>
                             <td><label>:</label></td>
                             <td>
-                                <div class="input-field">
-                                    <label
-                                        type="text"
-                                        class="input"
-                                        placeholder={{$tenant->nama_tenant}}
-                                    name="nama_tenant"
-                                        value="{{ old('nama_tenant', $tenant->nama_tenant) }}"
-                                    />
+                                <div class="output-field">
+                                    <p
+                                        class="output"   
+                                    >Budi Sandoro</p>
                                 </div>
                             </td>
                         </tr>
@@ -43,14 +39,10 @@
                             </td>
                             <td><label>:</label></td>
                             <td>
-                                <div class="input-field">
-                                    <label
-                                        type="text"
-                                        class="input"
-                                        placeholder={{$tenant->nama_tenant}}
-                                    name="nama_tenant"
-                                        value="{{ old('nama_tenant', $tenant->nama_tenant) }}"
-                                    />
+                                <div class="output-field">
+                                    <p
+                                        class="output"
+                                    >Makanan</p>
                                 </div>
                             </td>
                         </tr>
@@ -60,22 +52,19 @@
                             </td>
                             <td><label>:</label></td>
                             <td>
-                                <div class="input-field">
-                                    <label
+                                <div class="output-field">
+                                    <p
                                         type="text"
-                                        class="input"
-                                        placeholder={{$tenant->no_telp}}
-                                    name="no_telp"
-                                        value="{{ old('no_telp', $tenant->no_telp) }}"
-                                    />
+                                        class="output"
+                                    >0987654332</p>
                                 </div>
                             </td>
                         </tr>
                     </table>
                     <div class="button-container">
-                        <button type="submit" class="buttonSimpan">Simpan</button>
+                        <button type="button" class="buttonEdit">Edit</button>
                         <a href="{{ route('tenant.index') }}">
-                        <button type="button" class="buttonBatal">Batal</button>
+                        <button type="button" class="buttonKembali">Kembali</button>
                     </a>
                 </div>
             </form>
