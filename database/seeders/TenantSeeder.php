@@ -14,6 +14,6 @@ class TenantSeeder extends Seeder
     public function run(): void
     {
 //        Buat 100 record tenant menggunakan factory
-        Tenant::factory()->count(100)->create();
+        Tenant::factory()->count(134)->create();
     }
 }
