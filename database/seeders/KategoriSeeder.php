@@ -23,5 +23,11 @@ class KategoriSeeder extends Seeder
         Kategori::create([
             'nama_kategori' => 'Snack',
         ]);
+        Kategori::create([
+            'nama_kategori' => 'Pakaian',
+        ]);
+        Kategori::create([
+            'nama_kategori' => 'Aksesoris',
+        ]);
     }
 }

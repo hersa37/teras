@@ -14,8 +14,24 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::paginate(2);
+        $tenants = Tenant::paginate(10);
         return view('tenant.index', compact('tenants'));
+    }
+
+    /**
+     * Display a list of specific resources.
+     */
+
+    public function search(Request $request)
+    {
+        $tenants = Tenant::where('id_tenant', 'like', '%' . $request->search . '%')
+            ->orWhere('nama_tenant', 'like', '%' . $request->search . '%')
+            ->orWhere('kategori_tenant', 'like', '%' . $request->search . '%')
+            ->orWhere('no_telp', 'like', '%' . $request->search . '%')
+            ->paginate(10);
+        $tenants->appends($request->only('search'));
+        $search = $request->search;
+        return view('tenant.index', compact('tenants', 'search'));
     }
 
     /**
@@ -126,6 +142,6 @@ class TenantController extends Controller
     {
         $tenant = Tenant::findOrFail($id_tenant);
         $tenant->delete();
-        return redirect()->route('tenant.index');
+        return redirect()->back();
     }
 }

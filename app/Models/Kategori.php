@@ -14,4 +14,9 @@ class Kategori extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
+
+    protected $fillable = [
+        'nama_kategori',
+    ];
+
 }

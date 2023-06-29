@@ -38,6 +38,8 @@ Route::middleware(['auth:admin'])->group(function () {
     )->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::get('show', [TenantController::class, 'show']
     )->name('tenant/show');
+    Route::get('search', [TenantController::class, 'search']
+    )->name('tenant/search');
     Route::redirect('/admin', '/tenant-management');
 
 

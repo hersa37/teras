@@ -8,9 +8,12 @@
         <div class="search">
             <div class="input">
                 <i class="bx bx-search-alt"></i>
-                <form action="{{ route('tenant/show') }}" class="search_bar" method="get">
-                    @csrf
-                    <input type="text" placeholder="Cari..." id="mysearch" name="id_tenant"/>
+                <form action="{{ route('tenant/search') }}" class="search_bar" method="get">
+                    @if(isset($search))
+                        <input type="text" placeholder="{{ $search }}" id="mysearch" name="search" value="{{ $search }}"/>
+                    @else
+                    <input type="text" placeholder="Cari...." id="mysearch" name="search"/>
+                    @endif
                     <input type="submit" hidden/>
                 </form>
             </div>
@@ -21,8 +24,13 @@
                     <tr class="item_tenant">
                         <div class="item_list" style="display: flex">
                             <td class="label">
-                                <label for="tenant"
-                                       class="label_tenant"> {{ $tenant->id_tenant . ' | ' . $tenant->nama_tenant }}</label>
+                                <a href="{{ route('tenant/show', ['id_tenant' => $tenant->id_tenant]) }}" style="text-decoration: none">
+{{--                                    @csrf--}}
+                                    <div style="height: 100%; width: 100%">
+                                        <label for="tenant"
+                                               class="label_tenant"> {{ $tenant->id_tenant . ' | ' . $tenant->nama_tenant }}</label>
+                                    </div>
+                                </a>
                             </td>
                             <div class="btn">
                                 <td>
@@ -53,7 +61,7 @@
                 @endforeach
             </table>
         </div>
-{{--        Pagination links--}}
+        {{--        Pagination links--}}
         <div class="container" style="min-height: 50px">
             <div style="margin: auto">
                 {{ $tenants->links('vendor.pagination.default') }}
