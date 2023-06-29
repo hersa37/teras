@@ -14,7 +14,7 @@
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet"
     />
-    @vite(['resources/css/dashboard-style.css'])
+    @vite(['resources/css/dashboard-style.css', 'resources/css/app.css'])
     @stack('styles')
 </head>
 <body>

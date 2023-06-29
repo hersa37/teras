@@ -8,9 +8,7 @@
         <div class="search">
             <div class="input">
                 <i class="bx bx-search-alt"></i>
-                {{--                //TODO 1: Create a form that searches based on the input name id_tenant using the show function--}}
                 <form action="{{ route('tenant/show') }}" class="search_bar" method="get">
-                    {{--                Create a form that searches based on the input name id_tenant using the show function--}}
                     @csrf
                     <input type="text" placeholder="Cari..." id="mysearch" name="id_tenant"/>
                     <input type="submit" hidden/>
@@ -54,6 +52,12 @@
                     </tr>
                 @endforeach
             </table>
+        </div>
+{{--        Pagination links--}}
+        <div class="container" style="min-height: 50px">
+            <div style="margin: auto">
+                {{ $tenants->links('vendor.pagination.default') }}
+            </div>
         </div>
         <div class="search" style="display: flex">
             <a href="{{ route('tenant.create') }}">

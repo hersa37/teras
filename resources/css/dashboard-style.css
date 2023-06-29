@@ -239,3 +239,11 @@ body {
 .sidebar.active .profile .profile_detail {
     opacity: 1;
 }
+
+.pages {
+    display: inline;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: center;
+}

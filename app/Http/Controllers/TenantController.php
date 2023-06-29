@@ -14,7 +14,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::all();
+        $tenants = Tenant::paginate(2);
         return view('tenant.index', compact('tenants'));
     }
 
@@ -59,9 +59,7 @@ class TenantController extends Controller
         if ($tenant == null) {
             $tenant = Tenant::where('nama_tenant', $id_tenant)->firstOrFail();
         }
-        if ($tenant == null) {
-            return view('auth.error');
-        }
+
         return view('tenant.show', compact('tenant'));
     }
 
