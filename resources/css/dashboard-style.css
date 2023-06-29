@@ -247,3 +247,11 @@ body {
     padding-right: 10px;
     align-content: center;
 }
+
+/* pagination */
+.pagenation_content{
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+}
