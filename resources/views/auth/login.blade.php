@@ -12,6 +12,22 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     @stack('styles')
     @vite(['resources/css/login-style.css'])
+    <style>
+        body {
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +48,7 @@
                 <input name='password' type="password" class="input" placeholder="Password" required/>
                 <i class="bx bx-lock"></i>
             </div>
-            
+
             <div class="input-field">
                 <input type="submit" class="submit" value="Login"/>
             </div>
@@ -43,7 +59,7 @@
             @enderror
         </form>
     </div>
-    
+
 </div>
 
 </body>
