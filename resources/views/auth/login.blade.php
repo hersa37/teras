@@ -12,8 +12,8 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     @stack('styles')
     @vite(['resources/css/login-style.css'])
+    {{--        fade in when loaded--}}
     <style>
-{{--        fade in when loaded--}}
         body {
             animation: fadeInAnimation ease 2s;
             animation-iteration-count: 1;
