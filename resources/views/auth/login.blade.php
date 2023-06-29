@@ -32,16 +32,18 @@
                 <input name='password' type="password" class="input" placeholder="Password" required/>
                 <i class="bx bx-lock"></i>
             </div>
+            
             <div class="input-field">
                 <input type="submit" class="submit" value="Login"/>
             </div>
+            @error('id')
+            <div class="error_login">
+                <p>{{ $message }}</p>
+            </div>
+            @enderror
         </form>
     </div>
-    @error('id')
-    <div class="container">
-        <h1>{{ $message }}</h1>
-    </div>
-    @enderror
+    
 </div>
 
 </body>

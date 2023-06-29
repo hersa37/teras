@@ -63,7 +63,7 @@ body {
 }
 
 .logo_name {
-    font-size: 600;
+    font-weight: 600;
     width: max-content;
     color: rgba(234, 247, 234, 1);
 }
@@ -111,7 +111,7 @@ body {
     font-weight: 600;
 }
 
-.sidebar .active ul li a{
+.sidebar .active ul li a {
     background-color: rgba(234, 247, 234, 1);
     color: rgba(53, 113, 70, 1);
     font-weight: 600;
@@ -249,9 +249,36 @@ body {
 }
 
 /* pagination */
-.pagenation_content{
+.pagination_content {
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 120px;
     transform: translateX(-50%);
+}
+
+.pagination_content li {
+    color: rgba(53, 113, 70, 1);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pagination_content .pagination li.pages a {
+    color: rgba(53, 113, 70, 1);
+    text-decoration: none;
+}
+
+.pagination_content .pagination li.pages span {
+    color: rgba(53, 113, 70, 1);
+}
+
+.pagination_content .pagination li.active.pages span {
+    background-color: rgba(98, 154, 112, 1);
+    padding: 5px 10px;
+    align-items: center;
+    border-radius: 6px;
+    color: white;
+}
+
+.pagination_content .pagination li.disabled.pages span {
+    color: rgba(53, 113, 70, 1);
 }

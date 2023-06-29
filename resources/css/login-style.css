@@ -64,7 +64,7 @@ i {
     border: none;
     border-radius: 30px;
     font-size: 15px;
-    font-weight: b;
+    font-weight: 600;
     height: 45px;
     outline: none;
     width: 100%;
@@ -76,4 +76,10 @@ i {
 
 .submit:hover {
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.error_login{
+    color: rgba(193, 230, 193, 1);
+    text-align: center;
+    position: relative
 }
