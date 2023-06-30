@@ -99,5 +99,9 @@
     btn.onclick = function () {
         sidebar.classList.toggle("active");
     };
+    document.getElementById("kategori").addEventListener("change", function() {
+    this.style.backgroundColor = this.options[this.selectedIndex].style.backgroundColor;
+    });
+
 </script>
 </html>
